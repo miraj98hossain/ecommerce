@@ -122,7 +122,11 @@ class _SignInPageState extends State<SignInPage> {
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       backgroundColor: Colors.deepPurple),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    context
+                                        .read<SignInBloc>()
+                                        .add(SignInLoginButtonEvent());
+                                  },
                                   child: const Text(
                                     "Sign In",
                                     style: TextStyle(

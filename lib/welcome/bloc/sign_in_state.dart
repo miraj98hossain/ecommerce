@@ -15,3 +15,21 @@ class SignInState {
         passwordVisible: passwordVisible ?? this.passwordVisible);
   }
 }
+
+class SignInInitial extends SignInState {
+  SignInInitial({
+    String email = "",
+    String password = "",
+    bool passwordVisible = false,
+  }) : super(
+            email: email, password: password, passwordVisible: passwordVisible);
+}
+
+class SignInLoading extends SignInState {}
+
+class SignInSuccess extends SignInState {}
+
+class SignInError extends SignInState {
+  final String error;
+  SignInError({required this.error});
+}

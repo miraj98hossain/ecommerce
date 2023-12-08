@@ -20,3 +20,12 @@ class SignInPasswordVisibleEvent extends SignInEvent {
 
   SignInPasswordVisibleEvent({required this.passwordVisible});
 }
+
+class SignInLoginButtonEvent extends SignInEvent {}
+
+class SignInRegisterButtonEvent extends SignInEvent {
+  final String email;
+  final String password;
+
+  SignInRegisterButtonEvent({required this.email, required this.password});
+}
