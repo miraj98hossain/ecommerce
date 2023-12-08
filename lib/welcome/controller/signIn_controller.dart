@@ -31,8 +31,18 @@ class SignInController {
           if (user != null) {
             //We got verified from user
           }
-        } catch (e) {}
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'user-not-found') {
+            print("No user found for that email.");
+          } else if (e.code == 'wrong-password') {
+            print("Wrong password provided for that user.");
+          } else if (e.code == '') {
+            print("Wrong password provided for that user.");
+          }
+        }
       }
-    } catch (e) {}
+    } catch (e) {
+      print(e);
+    }
   }
 }

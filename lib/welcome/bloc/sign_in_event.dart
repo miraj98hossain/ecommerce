@@ -14,3 +14,9 @@ class SignInPasswordEvent extends SignInEvent {
 
   SignInPasswordEvent({required this.password});
 }
+
+class SignInPasswordVisibleEvent extends SignInEvent {
+  final bool passwordVisible;
+
+  SignInPasswordVisibleEvent({required this.passwordVisible});
+}
