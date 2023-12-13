@@ -39,6 +39,7 @@ dependencies:
   firebase_core: ^2.24.1
   bloc: ^8.1.2
   meta: ^1.9.1
+  fluttertoast: ^8.2.4
 
 dev_dependencies:
   flutter_test:

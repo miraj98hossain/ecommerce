@@ -1,3 +1,4 @@
+import 'package:ecommerce/register/register.dart';
 import 'package:ecommerce/welcome/bloc/sign_in_bloc.dart';
 import 'package:ecommerce/welcome/welcome.dart';
 import 'package:flutter/material.dart';
@@ -25,14 +26,17 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const SignInPage(),
-      ),
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const SignInPage(),
+          routes: {
+            '/welcome': (context) => const SignInPage(),
+            '/register': (context) => const RegisterPage(),
+          }),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:ecommerce/welcome/bloc/sign_in_bloc.dart';
+import 'package:ecommerce/welcome/bloc/sign_in_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -123,9 +124,10 @@ class _SignInPageState extends State<SignInPage> {
                                               BorderRadius.circular(10)),
                                       backgroundColor: Colors.deepPurple),
                                   onPressed: () {
-                                    context
-                                        .read<SignInBloc>()
-                                        .add(SignInLoginButtonEvent());
+                                    context.read<SignInBloc>().add(
+                                        SignInLoginButtonEvent(
+                                            email: state.email,
+                                            password: state.password));
                                   },
                                   child: const Text(
                                     "Sign In",
@@ -148,7 +150,9 @@ class _SignInPageState extends State<SignInPage> {
                                               BorderRadius.circular(10)),
                                       backgroundColor: const Color.fromARGB(
                                           255, 28, 23, 36)),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/register');
+                                  },
                                   child: const Text(
                                     "Sign Up",
                                     style: TextStyle(
