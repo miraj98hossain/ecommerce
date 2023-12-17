@@ -1,3 +1,4 @@
+import 'package:ecommerce/register/bloc/register_bloc.dart';
 import 'package:ecommerce/register/register.dart';
 import 'package:ecommerce/welcome/bloc/sign_in_bloc.dart';
 import 'package:ecommerce/welcome/welcome.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => SignInBloc(),
+        ),
+        BlocProvider(
+          create: (context) => RegisterBloc(),
         ),
       ],
       child: MaterialApp(
