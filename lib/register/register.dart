@@ -1,6 +1,6 @@
 import 'package:ecommerce/register/bloc/register_bloc.dart';
 import 'package:ecommerce/welcome/bloc/sign_in_bloc.dart';
-import 'package:ecommerce/welcome/bloc/sign_in_state.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -101,8 +101,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                 width: double.infinity,
                                 child: TextFormField(
                                   onChanged: (value) {
-                                    context.read<RegisterBloc>().add(
-                                        PasswordEvent(password: value));
+                                    context
+                                        .read<RegisterBloc>()
+                                        .add(PasswordEvent(password: value));
                                   },
                                   obscureText: !state.ispasswordvisible,
                                   decoration: InputDecoration(
@@ -112,8 +113,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                         onTap: () {
                                           context.read<SignInBloc>().add(
                                               SignInPasswordVisibleEvent(
-                                                  passwordVisible:
-                                                      !state.ispasswordvisible));
+                                                  passwordVisible: !state
+                                                      .ispasswordvisible));
                                         },
                                         child: state.ispasswordvisible
                                             ? const Icon(Icons.remove_red_eye)
@@ -134,13 +135,13 @@ class _RegisterPageState extends State<RegisterPage> {
                                 child: TextFormField(
                                   onChanged: (value) {
                                     context.read<RegisterBloc>().add(
-                                        ConfirmPasswordEvent(confirmPassword: value));
+                                        ConfirmPasswordEvent(
+                                            confirmPassword: value));
                                   },
                                   obscureText: true,
                                   decoration: InputDecoration(
                                     prefixIcon: const Icon(Icons.password),
                                     label: const Text("Confirm Password"),
-                                    
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
